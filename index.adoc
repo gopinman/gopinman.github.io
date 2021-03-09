@@ -1,11 +1,63 @@
 = The Intrepid Chronicles
-Kismet Lee; B. Steppenwolf; Pax Draeke
+Gopinath M <gopi23185@gmail.com>
 :toc: 
 :toclevels: 4 
 
-== Certain Peril
+== GDB Tips
 
-Daylight trickles across the cobblestones...
+=== Debugging core using gdb
+---
+Core file limit should be unlimited to generate the core in linux, to set core file limit execute the below command on shell
+
+ >> $ulimit -c unlimited
+
+Once this is done the core is generated in the current directory of the process but we can also change the core  name and path by changing  it in /proc/sys/kernel/core_pattern
+
+ >> $echo /home/gopinman/mycore > /proc/sys/kernel/core_pattern
+
+Once above setting is done the core file would be generated at /home/gopinman/mycore.pid (process ID of process that generated Core file)
+
+---
+
+=== Compliation option for gdb
+---
+
+Binary/library should be complied with debugging option to use it with gdb, debugging option is enabled using -g complier option
+
+ >> $g++ -g -o cppfilename.o -lpthread cppfilename.cpp
+
+The above compilation will generate the un-stripped binary with debugging option, this information can be retrieved using file command
+
+ >> $file cppfilename.o
+
+Remember if the core is generated from stripped binary then re-compile the binary with debug options and pass the debug binary and core as 
+parameters to gdb on command shell as below.
+
+In multi-threaded environment you will have multiple stack snap shot for each thread, using below command we can dump the stack trace for multiple threads
+
+ >> $thread apply all bt
+
+the output of above command will dump the stack frames for all the threads in a process
+To switch between threads use "thread <number>"command
+ >> $thread 1
+
+after switchover stack of current thread can be dumped with bt command. We can inspect each frame using frame <number>, frame 0
+ >> $list +
+
+list+ will show the source for the stack dump
+ >> $print variable 
+
+---
+
+=== Debugging a Hang process
+---
+A process hang due to deadlocks can be made to generate core dump by kill command. Signal number 11 should be used
+
+ >> $kill -11 pid
+
+source : http://yusufonlinux.blogspot.in/2010/11/debugging-core-using-gdb.html 
+
+---
 
 === A Recipe for Potion
 
