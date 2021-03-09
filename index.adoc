@@ -1,0 +1,72 @@
+= The Intrepid Chronicles
+Kismet Lee; B. Steppenwolf; Pax Draeke
+:toc: 
+:toclevels: 4 
+
+== Certain Peril
+
+Daylight trickles across the cobblestones...
+
+=== A Recipe for Potion
+
+We have to harvest the leaves by the light of the teal moons...
+
+====== Searching for Ginseng
+
+Crawling through the twisted understory...
+
+Content in document.
+
+image::sunset.jpg[SDS]  
+
+Content in document
+____
+If you don't know where you are going, any road will get you there.
+____
+
+"I hold it that a little rebellion now and then is a good thing,
+and as necessary in the political world as storms in the physical."
+-- Thomas Jefferson, Papers of Thomas Jefferson: Volume 11
+
+
+.A Table
+[options="header"]
+|=======
+|P|Q|P^Q
+|T|T|T
+|T|F|F
+|F|T|F
+|F|F|F
+|=======
+
+==== first section
+
+* item1
+* item2
+** item11
+** item12
+* item3
+
+== second section
+
+= My Article
+J. Smith
+
+https://wikipedia.org[Wikipedia] is an
+on-line encyclopaedia, available in
+English and *many* other languages.
+
+== Software
+
+You can install 'package-name' using
+the `gem` command:
+
+ gem install package-name
+
+== Hardware
+
+Metals commonly used include:
+
+* copper
+* tin
+* lead
