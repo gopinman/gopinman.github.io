@@ -69,7 +69,7 @@ Crawling through the twisted understory...
 
 Content in document.
 
-image::sunset.jpg[SDS]  
+image::./images/sunset.jpg[SDS]  
 
 Content in document
 ____
